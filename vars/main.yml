@@ -1,0 +1,20 @@
+---
+# vars for freebsd-ssmtp
+
+# fm_ssmtp_debug: True
+# fm_ssmtp_backup_conf: no
+
+# fm_ssmtp_postmaster_address: "postmaster@srv.foo.example.com"
+# fm_ssmtp_mailhub: "mail.example.com:587"
+# fm_ssmtp_rewriteDomain: "example.com"
+# fm_ssmtp_AuthUser: "AuthUser"
+# fm_ssmtp_AuthPass: "{{ lookup('file', 'AuthUser@mail.example.com.AuthPass') }}"
+
+# fp_ssmtp_revaliases:
+#   - "admin:admint@example.com:mail.example.com:587"
+
+# CHANGE THIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+# EOF
+...

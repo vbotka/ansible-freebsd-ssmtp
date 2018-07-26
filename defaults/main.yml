@@ -1,0 +1,36 @@
+---
+# defaults for freebsd-ssmtp
+
+fm_ssmtp_debug: False
+fm_ssmtp_backup_conf: yes
+
+# CHANGE AT LEAST THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+rc_conf_hostname: "srv.example.com"
+fm_ssmtp_postmaster_address: "postmaster@example.com"
+fm_ssmtp_mailhub: "hub.example.com:587"
+fm_ssmtp_rewriteDomain: "example.com"
+fm_ssmtp_UseTLS: "Yes"
+fm_ssmtp_UseSTARTTLS: "Yes"
+fm_ssmtp_AuthUser: "username"
+fm_ssmtp_AuthPass: "password"
+fm_ssmtp_AuthMethod: "LOGIN"
+fm_ssmtp_FromLineOverride: "yes"
+fp_ssmtp_revaliases: []
+# CHANGE AT LEAST THIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+freebsd_install_method: "packages"
+#freebsd_install_method: "ports"
+freebsd_use_packages: "yes"
+freebsd_ssmtp_packages:
+  - "mail/ssmtp"
+
+fp_ssmtp_mailerconf:
+  - "sendmail        /usr/local/sbin/ssmtp"
+  - "send-mail       /usr/local/sbin/ssmtp"
+  - "mailq           /usr/local/sbin/ssmtp"
+  - "newaliases      /usr/local/sbin/ssmtp"
+  - "hoststat        /usr/bin/true"
+  - "purgestat       /usr/bin/true"
+
+# EOF
+...

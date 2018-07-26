@@ -1,0 +1,24 @@
+---
+# tasks for freebsd-ssmtp
+
+- import_tasks: debug.yml
+  when: fm_debug
+  tags: fm_ssmtp_debug
+
+- import_tasks: packages.yml
+  tags: fm_ssmtp_packages
+
+- import_tasks: rcconf.yml
+  tags: fm_ssmtp_rcconf
+
+- import_tasks: mailerconf.yml
+  tags: fm_ssmtp_mailerconf
+
+- import_tasks: periodicconf.yml
+  tags: fm_ssmtp_periodicconf
+
+- import_tasks: config.yml
+  tags: fm_ssmtp_config
+
+# EOF
+...

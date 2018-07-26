@@ -1,0 +1,20 @@
+---
+
+- name: "config: Configure /usr/local/etc/ssmtp/ssmtp.conf"
+  template:
+    src: ssmtp.conf.j2
+    dest: /usr/local/etc/ssmtp/ssmtp.conf
+    owner: root
+    group: ssmtp
+    mode: 0640
+
+- name: "config: Configure /usr/local/etc/ssmtp/revaliases"
+  template:
+    src: revaliases.j2
+    dest: /usr/local/etc/ssmtp/revaliases
+    owner: root
+    group: ssmtp
+    mode: 0640
+
+# EOF
+...

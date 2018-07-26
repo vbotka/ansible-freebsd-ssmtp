@@ -1,0 +1,17 @@
+---
+
+- name: "periodic: Configure /etc/periodic.conf"
+  lineinfile:
+    dest: "/etc/periodic.conf"
+    regexp: "^{{ item.regexp }}"
+    line: "{{ item.regexp }}={{ item.line }}"
+    backup: "{{ fm_ssmtp_backup_conf }}"
+    create: yes
+  loop:
+    - { regexp: "daily_clean_hoststat_enable",  line: "\"NO\"" }
+    - { regexp: "daily_status_mail_rejects_enable",  line: "\"NO\"" }
+    - { regexp: "daily_status_include_submit_mailq",  line: "\"NO\"" }
+    - { regexp: "daily_submit_queuerun",  line: "\"NO\""}
+
+# EOF
+...
