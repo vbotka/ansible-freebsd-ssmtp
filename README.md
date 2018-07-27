@@ -3,7 +3,7 @@ freebsd-ssmtp
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-ssmtp)
 
-[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd-ssmtp/) FreeBSD. Install and configure SSMTP.
+[Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_ssmtp/) FreeBSD. Install and configure SSMTP.
 
 
 Requirements
@@ -30,23 +30,23 @@ Workflow
 2) Install role.
 
 ```
-# ansible-galaxy install vbotka.freebsd-ssmtp
+# ansible-galaxy install vbotka.freebsd_ssmtp
 ```
 
 3) Fit variables.
 
 ```
-# editor vbotka.freebsd-ssmtp/vars/main.yml
+# editor vbotka.freebsd_ssmtp/vars/main.yml
 ```
 
 4) Create playbook and inventory.
 
 ```
-# cat freebsd-ssmtp.yml
+# cat freebsd_ssmtp.yml
 
 - hosts: mailserver
   roles:
-    - vbotka.freebsd-ssmtp
+    - vbotka.freebsd_ssmtp
 ```
 
 ```
@@ -65,7 +65,7 @@ ansible_perl_interpreter=/usr/local/bin/perl
 5) Install and configure the mailserver.
 
 ```
-# ansible-playbook freebsd-ssmtp.yml
+# ansible-playbook freebsd_ssmtp.yml
 ```
 
 6) Test it
