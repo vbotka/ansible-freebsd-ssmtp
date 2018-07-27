@@ -1,4 +1,4 @@
-freebsd-ssmtp
+freebsd_ssmtp
 =============
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://travis-ci.org/vbotka/ansible-freebsd-ssmtp)
