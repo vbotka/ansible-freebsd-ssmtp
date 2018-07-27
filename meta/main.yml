@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: freebsd-ssmtp
   author: Vladimir Botka
   description: FreeBSD. Install and configure SSMTP.
   company: https://botka.link
