@@ -26,10 +26,10 @@
          fm_ssmtp_AuthPass [ {{ fm_ssmtp_AuthPass }} ]
          fm_ssmtp_AuthMethod [ {{ fm_ssmtp_AuthMethod }} ]
          fm_ssmtp_FromLineOverride [ {{ fm_ssmtp_FromLineOverride }} ]
-         fp_ssmtp_revaliases
-         {{ fp_ssmtp_revaliases | to_nice_yaml }}
-         fp_ssmtp_mailerconf
-         {{ fp_ssmtp_mailerconf | to_nice_yaml }}
+         fm_ssmtp_revaliases
+         {{ fm_ssmtp_revaliases | to_nice_yaml }}
+         fm_ssmtp_mailerconf
+         {{ fm_ssmtp_mailerconf | to_nice_yaml }}
         
   debug:
     msg: "{{ msg.split('\n') }}"
