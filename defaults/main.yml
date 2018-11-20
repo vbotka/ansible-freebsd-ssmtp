@@ -19,7 +19,7 @@ fm_ssmtp_revaliases: []
 # CHANGE AT LEAST THIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 freebsd_install_method: "packages"
-#freebsd_install_method: "ports"
+# freebsd_install_method: "ports"
 freebsd_use_packages: "yes"
 freebsd_ssmtp_packages:
   - "mail/ssmtp"
@@ -35,10 +35,25 @@ fm_ssmtp_mailerconf:
 
 # /etc/periodic.conf.local
 fm_ssmtp_periodic_conf:
-  - { regexp: "daily_clean_hoststat_enable=", line: "\"NO\"" }
-  - { regexp: "daily_status_mail_rejects_enable=", line: "\"NO\"" }
-  - { regexp: "daily_status_include_submit_mailq=", line: "\"NO\"" }
-  - { regexp: "daily_submit_queuerun=", line: "\"NO\""}
+  - regexp: "daily_clean_hoststat_enable"
+    val: "\"NO\""
+  - regexp: "daily_status_mail_rejects_enable"
+    val: "\"NO\""
+  - regexp: "daily_status_include_submit_mailq"
+    val: "\"NO\""
+  - regexp: "daily_submit_queuerun"
+    val: "\"NO\""
+
+# /etc/rc.conf
+fm_ssmtp_rcconf:
+  - regexp: "sendmail_enable"
+    val: "\"NONE\""
+  - regexp: "sendmail_submit_enable"
+    val: "\"NO\""
+  - regexp: "sendmail_outbound_enable"
+    val: "\"NO\""
+  - regexp: "sendmail_msp_queue_enable"
+    val: "\"NO\""
 
 # EOF
 ...

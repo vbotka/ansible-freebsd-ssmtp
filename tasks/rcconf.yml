@@ -3,14 +3,10 @@
 - name: "rcconf: Disable sendmail in /etc/rc.conf"
   lineinfile:
     dest: "/etc/rc.conf"
-    regexp: "^{{ item.regexp }}"
-    line: "{{ item.regexp }}={{ item.line }}"
+    regexp: "^{{ item.regexp }}="
+    line: "{{ item.regexp }}={{ item.val }}"
     backup: "{{ fm_ssmtp_backup_conf }}"
-  loop:
-    - { regexp: "sendmail_enable", line: "\"NONE\"" }
-    - { regexp: "sendmail_submit_enable", line: "\"NO\"" }
-    - { regexp: "sendmail_outbound_enable", line: "\"NO\"" }
-    - { regexp: "sendmail_msp_queue_enable", line: "\"NO\"" }
+  loop: "{{ fm_ssmtp_rcconf }}"
   notify: stop sendmail
 
 # EOF

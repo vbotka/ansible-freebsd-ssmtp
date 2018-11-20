@@ -3,7 +3,7 @@
 
 - import_tasks: debug.yml
   when: fm_debug
-  tags: fm_ssmtp_debug
+  tags: [fm_ssmtp_debug, always]
 
 - import_tasks: packages.yml
   tags: fm_ssmtp_packages

@@ -3,8 +3,8 @@
 - name: "periodic: Configure /etc/periodic.conf.local"
   lineinfile:
     dest: "/etc/periodic.conf.local"
-    regexp: "^{{ item.regexp }}"
-    line: "{{ item.regexp }}{{ item.line }}"
+    regexp: "^{{ item.regexp }}="
+    line: "{{ item.regexp }}={{ item.val }}"
     backup: "{{ fm_ssmtp_backup_conf }}"
     create: yes
   loop: "{{ fm_ssmtp_periodic_conf }}"
