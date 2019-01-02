@@ -2,6 +2,7 @@
 # defaults for freebsd-ssmtp
 
 fm_ssmtp_debug: False
+fm_ssmtp_auth_debug: False
 fm_ssmtp_backup_conf: no
 
 # CHANGE AT LEAST THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -22,17 +22,23 @@
          fm_ssmtp_rewriteDomain [ {{ fm_ssmtp_rewriteDomain }} ]
          fm_ssmtp_UseTLS [ {{ fm_ssmtp_UseTLS }} ]
          fm_ssmtp_UseSTARTTLS [ {{ fm_ssmtp_UseSTARTTLS }} ]
-         fm_ssmtp_AuthUser [ {{ fm_ssmtp_AuthUser }} ]
-         fm_ssmtp_AuthPass [ {{ fm_ssmtp_AuthPass }} ]
-         fm_ssmtp_AuthMethod [ {{ fm_ssmtp_AuthMethod }} ]
          fm_ssmtp_FromLineOverride [ {{ fm_ssmtp_FromLineOverride }} ]
          fm_ssmtp_revaliases
          {{ fm_ssmtp_revaliases | to_nice_yaml }}
          fm_ssmtp_mailerconf
          {{ fm_ssmtp_mailerconf | to_nice_yaml }}
-
   debug:
     msg: "{{ msg.split('\n') }}"
+
+- name: "FreeBSD mailserver SSMTP Debug Auth"
+  vars:
+    msg: |
+         fm_ssmtp_AuthUser [ {{ fm_ssmtp_AuthUser }} ]
+         fm_ssmtp_AuthPass [ {{ fm_ssmtp_AuthPass }} ]
+         fm_ssmtp_AuthMethod [ {{ fm_ssmtp_AuthMethod }} ]
+  debug:
+    msg: "{{ msg.split('\n') }}"
+  when: fm_ssmtp_auth_debug
 
 # EOF
 ...
