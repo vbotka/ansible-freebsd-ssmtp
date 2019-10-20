@@ -1,10 +1,10 @@
 ---
 # handlers for freebsd-ssmtp
 
-- name: stop sendmail
+- name: "stop sendmail"
   service:
     name: "sendmail"
-    state: stopped
+    state: "stopped"
 
 # EOF
 ...

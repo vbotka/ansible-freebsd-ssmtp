@@ -2,10 +2,11 @@
 # tasks for freebsd-ssmtp
 
 - import_tasks: debug.yml
-  when: fm_ssmtp_debug
+  when: fm_ssmtp_debug|bool
   tags: [fm_ssmtp_debug, always]
 
 - import_tasks: packages.yml
+  when: fm_ssmtp_install|bool
   tags: fm_ssmtp_packages
 
 - import_tasks: rcconf.yml

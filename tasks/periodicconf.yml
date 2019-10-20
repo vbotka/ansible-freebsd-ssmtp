@@ -6,7 +6,7 @@
     regexp: "^\\s*{{ item.regexp }}\\s*="
     line: "{{ item.regexp }}={{ item.val }}"
     backup: "{{ fm_ssmtp_backup_conf }}"
-    create: yes
+    create: true
   loop: "{{ fm_ssmtp_periodic_conf }}"
 
 # EOF

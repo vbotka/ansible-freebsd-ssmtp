@@ -2,11 +2,11 @@
 
 - name: "mailerconf: Configure /etc/mail/mailer.conf"
   template:
-    src: mailer.conf.j2
-    dest: /etc/mail/mailer.conf
-    owner: root
-    group: wheel
-    mode: 0644
+    src: "mailer.conf.j2"
+    dest: "/etc/mail/mailer.conf"
+    owner: "root"
+    group: "wheel"
+    mode: "0644"
     backup: "{{ fm_ssmtp_backup_conf }}"
 
 # EOF

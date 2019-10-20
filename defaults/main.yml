@@ -1,9 +1,10 @@
 ---
 # defaults for freebsd-ssmtp
 
-fm_ssmtp_debug: False
-fm_ssmtp_auth_debug: False
-fm_ssmtp_backup_conf: no
+fm_ssmtp_install: true
+fm_ssmtp_debug: false
+fm_ssmtp_auth_debug: false
+fm_ssmtp_backup_conf: false
 
 # CHANGE AT LEAST THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 rc_conf_hostname: "srv.example.com"                     # Note 1.

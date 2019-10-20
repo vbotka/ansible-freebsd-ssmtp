@@ -3,39 +3,40 @@
 - name: "FreeBSD mailserver SSMTP Debug"
   vars:
     msg: |
-         ansible_architecture [ {{ ansible_architecture }} ]
-         ansible_os_family [ {{ ansible_os_family }} ]
-         ansible_distribution [ {{ ansible_distribution }} ]
-         ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
-         ansible_distribution_version [ {{ ansible_distribution_version }} ]
-         ansible_distribution_release [ {{ ansible_distribution_release }} ]
+         ansible_architecture [{{ ansible_architecture }}]
+         ansible_os_family [{{ ansible_os_family }}]
+         ansible_distribution [{{ ansible_distribution }}]
+         ansible_distribution_major_version [{{ ansible_distribution_major_version }}]
+         ansible_distribution_version [{{ ansible_distribution_version }}]
+         ansible_distribution_release [{{ ansible_distribution_release }}]
 
-         freebsd_install_method [ {{ freebsd_install_method }} ]
-         freebsd_use_packages [ {{ freebsd_use_packages }} ]
+         freebsd_install_method [{{ freebsd_install_method }}]
+         freebsd_use_packages [{{ freebsd_use_packages }}]
          freebsd_ssmtp_packages
-         {{ freebsd_ssmtp_packages | to_nice_yaml }}
+         {{ freebsd_ssmtp_packages|to_nice_yaml }}
+         fm_ssmtp_install [{{ fm_ssmtp_install }}]
 
-         rc_conf_hostname [ {{ rc_conf_hostname }} ]
-         fm_ssmtp_backup_conf [ {{ fm_ssmtp_backup_conf }} ]
-         fm_ssmtp_postmaster_address [ {{ fm_ssmtp_postmaster_address }} ]
-         fm_ssmtp_mailhub [ {{ fm_ssmtp_mailhub }} ]
-         fm_ssmtp_rewriteDomain [ {{ fm_ssmtp_rewriteDomain }} ]
-         fm_ssmtp_UseTLS [ {{ fm_ssmtp_UseTLS }} ]
-         fm_ssmtp_UseSTARTTLS [ {{ fm_ssmtp_UseSTARTTLS }} ]
-         fm_ssmtp_FromLineOverride [ {{ fm_ssmtp_FromLineOverride }} ]
+         rc_conf_hostname [{{ rc_conf_hostname }}]
+         fm_ssmtp_backup_conf [{{ fm_ssmtp_backup_conf }}]
+         fm_ssmtp_postmaster_address [{{ fm_ssmtp_postmaster_address }}]
+         fm_ssmtp_mailhub [{{ fm_ssmtp_mailhub }}]
+         fm_ssmtp_rewriteDomain [{{ fm_ssmtp_rewriteDomain }}]
+         fm_ssmtp_UseTLS [{{ fm_ssmtp_UseTLS }}]
+         fm_ssmtp_UseSTARTTLS [{{ fm_ssmtp_UseSTARTTLS }}]
+         fm_ssmtp_FromLineOverride [{{ fm_ssmtp_FromLineOverride }}]
          fm_ssmtp_revaliases
-         {{ fm_ssmtp_revaliases | to_nice_yaml }}
+         {{ fm_ssmtp_revaliases|to_nice_yaml }}
          fm_ssmtp_mailerconf
-         {{ fm_ssmtp_mailerconf | to_nice_yaml }}
+         {{ fm_ssmtp_mailerconf|to_nice_yaml }}
   debug:
     msg: "{{ msg.split('\n') }}"
 
 - name: "FreeBSD mailserver SSMTP Debug Auth"
   vars:
     msg: |
-         fm_ssmtp_AuthUser [ {{ fm_ssmtp_AuthUser }} ]
-         fm_ssmtp_AuthPass [ {{ fm_ssmtp_AuthPass }} ]
-         fm_ssmtp_AuthMethod [ {{ fm_ssmtp_AuthMethod }} ]
+         fm_ssmtp_AuthUser [{{ fm_ssmtp_AuthUser }}]
+         fm_ssmtp_AuthPass [{{ fm_ssmtp_AuthPass }}]
+         fm_ssmtp_AuthMethod [{{ fm_ssmtp_AuthMethod }}]
   debug:
     msg: "{{ msg.split('\n') }}"
   when: fm_ssmtp_auth_debug
