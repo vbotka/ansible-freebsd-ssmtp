@@ -4,8 +4,8 @@
   pkgng:
     name: "{{ freebsd_ssmtp_packages }}"
   register: result
-  retries: "{{ freebsd_install_retries }}"
   until: result is succeeded
+  retries: "{{ freebsd_install_retries }}"
   delay: "{{ freebsd_install_delay }}"
   when: freebsd_install_method == "packages"
 
@@ -15,8 +15,8 @@
     use_packages: "{{ freebsd_use_packages }}"
   loop: "{{ freebsd_ssmtp_packages }}"
   register: result
-  retries: "{{ freebsd_install_retries }}"
   until: result is succeeded
+  retries: "{{ freebsd_install_retries }}"
   delay: "{{ freebsd_install_delay }}"
   when: freebsd_install_method == "ports"
 

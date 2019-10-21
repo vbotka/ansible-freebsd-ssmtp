@@ -12,9 +12,10 @@
 
          freebsd_install_method [{{ freebsd_install_method }}]
          freebsd_use_packages [{{ freebsd_use_packages }}]
+
+         fm_ssmtp_install [{{ fm_ssmtp_install }}]
          freebsd_ssmtp_packages
          {{ freebsd_ssmtp_packages|to_nice_yaml }}
-         fm_ssmtp_install [{{ fm_ssmtp_install }}]
 
          rc_conf_hostname [{{ rc_conf_hostname }}]
          fm_ssmtp_backup_conf [{{ fm_ssmtp_backup_conf }}]
@@ -39,7 +40,7 @@
          fm_ssmtp_AuthMethod [{{ fm_ssmtp_AuthMethod }}]
   debug:
     msg: "{{ msg.split('\n') }}"
-  when: fm_ssmtp_auth_debug
+  when: fm_ssmtp_auth_debug|bool
 
 # EOF
 ...
