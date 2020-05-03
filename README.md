@@ -4,6 +4,8 @@
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_ssmtp/) FreeBSD. Install and configure SSMTP.
 
+Please feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-freebsd-ssmtp/issues). Contributions are welcome.
+
 
 ## Requirements
 
