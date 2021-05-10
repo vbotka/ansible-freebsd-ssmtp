@@ -11,7 +11,9 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 ## Requirements
 
-No requiremenst.
+### Collections
+
+* community.general
 
 
 ## Variables
