@@ -11,7 +11,7 @@ mailhub={{ fm_ssmtp_mailhub }}
 
 # The address where the mail appears to come from for user authentication.
 # rewriteDomain=gmail.com
-rewriteDomain={{ fm_ssmtp_rewriteDomain }}
+rewriteDomain={{ fm_ssmtp_rewritedomain }}
 
 # The full hostname.  Must be correctly formed, fully qualified domain name or GMail will reject connection.
 # hostname=yourlocalhost.yourlocaldomain.tld
@@ -20,19 +20,19 @@ hostname={{ rc_conf_hostname }}
 # Use SSL/TLS before starting negotiation
 #UseTLS=Yes
 #UseSTARTTLS=Yes
-UseTLS={{ fm_ssmtp_UseTLS }}
-UseSTARTTLS={{ fm_ssmtp_UseSTARTTLS }}
+UseTLS={{ fm_ssmtp_usetls }}
+UseSTARTTLS={{ fm_ssmtp_usestarttls }}
 
 # Username/Password
 #AuthUser=username
 #AuthPass=password
 #AuthMethod=LOGIN
-AuthUser={{ fm_ssmtp_AuthUser }}
-AuthPass={{ fm_ssmtp_AuthPass }}
-AuthMethod={{ fm_ssmtp_AuthMethod }}
+AuthUser={{ fm_ssmtp_authuser }}
+AuthPass={{ fm_ssmtp_authpass }}
+AuthMethod={{ fm_ssmtp_authmethod }}
 
 # Email 'From header's can override the default domain?
 #FromLineOverride=yes
-FromLineOverride={{ fm_ssmtp_FromLineOverride }}
+FromLineOverride={{ fm_ssmtp_fromlineoverride }}
 
 # EOF
