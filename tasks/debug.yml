@@ -24,10 +24,10 @@
          fm_ssmtp_backup_conf [{{ fm_ssmtp_backup_conf }}]
          fm_ssmtp_postmaster_address [{{ fm_ssmtp_postmaster_address }}]
          fm_ssmtp_mailhub [{{ fm_ssmtp_mailhub }}]
-         fm_ssmtp_rewriteDomain [{{ fm_ssmtp_rewriteDomain }}]
-         fm_ssmtp_UseTLS [{{ fm_ssmtp_UseTLS }}]
-         fm_ssmtp_UseSTARTTLS [{{ fm_ssmtp_UseSTARTTLS }}]
-         fm_ssmtp_FromLineOverride [{{ fm_ssmtp_FromLineOverride }}]
+         fm_ssmtp_rewritedomain [{{ fm_ssmtp_rewritedomain }}]
+         fm_ssmtp_usetls [{{ fm_ssmtp_usetls }}]
+         fm_ssmtp_usestarttls [{{ fm_ssmtp_usestarttls }}]
+         fm_ssmtp_fromlineoverride [{{ fm_ssmtp_fromlineoverride }}]
          fm_ssmtp_revaliases
          {{ fm_ssmtp_revaliases|to_nice_yaml }}
          fm_ssmtp_mailerconf
@@ -38,9 +38,9 @@
 - name: "FreeBSD mailserver SSMTP Debug Auth"
   vars:
     msg: |-
-         fm_ssmtp_AuthUser [{{ fm_ssmtp_AuthUser }}]
-         fm_ssmtp_AuthPass [{{ fm_ssmtp_AuthPass }}]
-         fm_ssmtp_AuthMethod [{{ fm_ssmtp_AuthMethod }}]
+         fm_ssmtp_authuser [{{ fm_ssmtp_authuser }}]
+         fm_ssmtp_authpass [{{ fm_ssmtp_authpass }}]
+         fm_ssmtp_authmethod [{{ fm_ssmtp_authmethod }}]
   ansible.builtin.debug:
     msg: "{{ msg.split('\n') }}"
   when: fm_ssmtp_auth_debug|bool

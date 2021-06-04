@@ -1,24 +1,24 @@
 ---
-# defaults for freebsd-ssmtp
+# defaults for freebsd_ssmtp
 
 fm_ssmtp_install: true
 fm_ssmtp_debug: false
 fm_ssmtp_auth_debug: false
 fm_ssmtp_backup_conf: false
 
-# CHANGE AT LEAST THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-rc_conf_hostname: "srv.example.com"                     # Note 1.
+# > > > CHANGE AT LEAST THIS - - - - - - - - - - - - - - - - - - - - - - - - - -
+rc_conf_hostname: "srv.example.com"  # Note 1.
 fm_ssmtp_postmaster_address: "postmaster@example.com"
 fm_ssmtp_mailhub: "hub.example.com:587"
-fm_ssmtp_rewriteDomain: "example.com"
-fm_ssmtp_UseTLS: "Yes"
-fm_ssmtp_UseSTARTTLS: "Yes"
-fm_ssmtp_AuthUser: "username"
-fm_ssmtp_AuthPass: "password"
-fm_ssmtp_AuthMethod: "LOGIN"
-fm_ssmtp_FromLineOverride: "yes"
+fm_ssmtp_rewritedomain: "example.com"
+fm_ssmtp_usetls: "Yes"
+fm_ssmtp_usestarttls: "Yes"
+fm_ssmtp_authuser: "username"
+fm_ssmtp_authpass: "password"
+fm_ssmtp_authmethod: "LOGIN"
+fm_ssmtp_fromlineoverride: "yes"
 fm_ssmtp_revaliases: []
-# CHANGE AT LEAST THIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+# - - - - - - - - - - - - - - - - - - - - - - - - - - CHANGE AT LEAST THIS < < <
 
 # packages
 freebsd_install_method: "packages"

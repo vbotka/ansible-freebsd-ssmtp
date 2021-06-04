@@ -1,5 +1,5 @@
 ---
-# tasks for freebsd-ssmtp
+# tasks for freebsd_ssmtp
 
 - import_tasks: debug.yml
   when: fm_ssmtp_debug|bool
