@@ -1,6 +1,6 @@
 ---
 
-- name: "FreeBSD mailserver SSMTP Debug"
+- name: FreeBSD mailserver SSMTP Debug
   vars:
     msg: |-
          ansible_architecture [{{ ansible_architecture }}]
@@ -33,7 +33,7 @@
          fm_ssmtp_mailerconf
          {{ fm_ssmtp_mailerconf|to_nice_yaml }}
   ansible.builtin.debug:
-    msg: "{{ msg.split('\n') }}"
+    msg: "{{ '{}'.format(msg) }}"
 
 - name: "FreeBSD mailserver SSMTP Debug Auth"
   vars:
@@ -42,7 +42,7 @@
          fm_ssmtp_authpass [{{ fm_ssmtp_authpass }}]
          fm_ssmtp_authmethod [{{ fm_ssmtp_authmethod }}]
   ansible.builtin.debug:
-    msg: "{{ msg.split('\n') }}"
+    msg: "{{ '{}'.format(msg) }}"
   when: fm_ssmtp_auth_debug|bool
 
 # EOF
