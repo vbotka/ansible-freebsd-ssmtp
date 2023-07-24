@@ -6,7 +6,7 @@
     dest: /usr/local/etc/ssmtp/ssmtp.conf
     owner: root
     group: ssmtp
-    mode: "0640"
+    mode: '0640'
 
 - name: "config: Configure /usr/local/etc/ssmtp/revaliases"
   ansible.builtin.template:
@@ -14,7 +14,7 @@
     dest: /usr/local/etc/ssmtp/revaliases
     owner: root
     group: ssmtp
-    mode: "0640"
+    mode: '0640'
 
 # EOF
 ...
