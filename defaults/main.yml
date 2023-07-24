@@ -7,36 +7,36 @@ fm_ssmtp_auth_debug: false
 fm_ssmtp_backup_conf: false
 
 # > > > CHANGE AT LEAST THIS - - - - - - - - - - - - - - - - - - - - - - - - - -
-rc_conf_hostname: "srv.example.com"  # Note 1.
-fm_ssmtp_postmaster_address: "postmaster@example.com"
-fm_ssmtp_mailhub: "hub.example.com:587"
-fm_ssmtp_rewritedomain: "example.com"
-fm_ssmtp_usetls: "Yes"
-fm_ssmtp_usestarttls: "Yes"
-fm_ssmtp_authuser: "username"
-fm_ssmtp_authpass: "password"
-fm_ssmtp_authmethod: "LOGIN"
-fm_ssmtp_fromlineoverride: "yes"
+rc_conf_hostname: srv.example.com  # Note 1.
+fm_ssmtp_postmaster_address: 'postmaster@example.com'
+fm_ssmtp_mailhub: 'hub.example.com:587'
+fm_ssmtp_rewritedomain: example.com
+fm_ssmtp_usetls: 'Yes'
+fm_ssmtp_usestarttls: 'Yes'
+fm_ssmtp_authuser: username
+fm_ssmtp_authpass: password
+fm_ssmtp_authmethod: LOGIN
+fm_ssmtp_fromlineoverride: 'yes'
 fm_ssmtp_revaliases: []
 # - - - - - - - - - - - - - - - - - - - - - - - - - - CHANGE AT LEAST THIS < < <
 
 # packages
-freebsd_install_method: "packages"
-# freebsd_install_method: "ports"
-freebsd_use_packages: "yes"
+freebsd_install_method: packages
+# freebsd_install_method: ports
+freebsd_use_packages: true
 freebsd_install_retries: 10
 freebsd_install_delay: 5
 freebsd_ssmtp_packages:
-  - "mail/ssmtp"
+  - mail/ssmtp
 
 # /etc/mail/mailer.conf
 fm_ssmtp_mailerconf:
-  - "sendmail        /usr/local/sbin/ssmtp"
-  - "send-mail       /usr/local/sbin/ssmtp"
-  - "mailq           /usr/local/sbin/ssmtp"
-  - "newaliases      /usr/local/sbin/ssmtp"
-  - "hoststat        /usr/bin/true"
-  - "purgestat       /usr/bin/true"
+  - 'sendmail        /usr/local/sbin/ssmtp'
+  - 'send-mail       /usr/local/sbin/ssmtp'
+  - 'mailq           /usr/local/sbin/ssmtp'
+  - 'newaliases      /usr/local/sbin/ssmtp'
+  - 'hoststat        /usr/bin/true'
+  - 'purgestat       /usr/bin/true'
 
 # /etc/periodic.conf.local
 fm_ssmtp_periodic_conf:

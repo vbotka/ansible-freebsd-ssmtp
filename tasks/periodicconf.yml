@@ -3,7 +3,7 @@
 - name: "periodic: Configure /etc/periodic.conf.local"
   ansible.builtin.lineinfile:
     create: true
-    mode: "0644"
+    mode: '0644'
     dest: /etc/periodic.conf.local
     regexp: '^\s*{{ item.regexp }}\s*=(.*)$'
     line: "{{ item.regexp }}={{ item.val }}"
