@@ -1,25 +1,24 @@
 ---
 # tasks for freebsd_ssmtp
 
-- import_tasks: debug.yml
+- ansible.builtin.import_tasks: debug.yml
   when: fm_ssmtp_debug|bool
   tags: fm_ssmtp_debug
 
-- import_tasks: packages.yml
+- ansible.builtin.import_tasks: packages.yml
   when: fm_ssmtp_install|bool
   tags: fm_ssmtp_packages
 
-- import_tasks: rcconf.yml
+- ansible.builtin.import_tasks: rcconf.yml
   tags: fm_ssmtp_rcconf
 
-- import_tasks: mailerconf.yml
+- ansible.builtin.import_tasks: mailerconf.yml
   tags: fm_ssmtp_mailerconf
 
-- import_tasks: periodicconf.yml
+- ansible.builtin.import_tasks: periodicconf.yml
   tags: fm_ssmtp_periodicconf
 
-- import_tasks: config.yml
+- ansible.builtin.import_tasks: config.yml
   tags: fm_ssmtp_config
 
 # EOF
-...

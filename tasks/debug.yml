@@ -1,48 +1,46 @@
 ---
-
 - name: FreeBSD mailserver SSMTP Debug
   vars:
     msg: |-
-         ansible_architecture: {{ ansible_architecture }}
-         ansible_os_family: {{ ansible_os_family }}
-         ansible_distribution: {{ ansible_distribution }}
-         ansible_distribution_major_version: {{ ansible_distribution_major_version }}
-         ansible_distribution_version: {{ ansible_distribution_version }}
-         ansible_distribution_release: {{ ansible_distribution_release }}
-         ansible_python_version: {{ ansible_python_version }}
+      ansible_architecture: {{ ansible_architecture }}
+      ansible_os_family: {{ ansible_os_family }}
+      ansible_distribution: {{ ansible_distribution }}
+      ansible_distribution_major_version: {{ ansible_distribution_major_version }}
+      ansible_distribution_version: {{ ansible_distribution_version }}
+      ansible_distribution_release: {{ ansible_distribution_release }}
+      ansible_python_version: {{ ansible_python_version }}
 
-         freebsd_install_method: {{ freebsd_install_method }}
-         freebsd_use_packages: {{ freebsd_use_packages }}
-         freebsd_install_retries: {{ freebsd_install_retries }}
-         freebsd_install_delay: {{ freebsd_install_delay }}
+      freebsd_install_method: {{ freebsd_install_method }}
+      freebsd_use_packages: {{ freebsd_use_packages }}
+      freebsd_install_retries: {{ freebsd_install_retries }}
+      freebsd_install_delay: {{ freebsd_install_delay }}
 
-         fm_ssmtp_install: {{ fm_ssmtp_install }}
-         freebsd_ssmtp_packages:
-           {{ freebsd_ssmtp_packages|to_nice_yaml(indent=2)|indent(2) }}
-         rc_conf_hostname: {{ rc_conf_hostname }}
-         fm_ssmtp_backup_conf: {{ fm_ssmtp_backup_conf }}
-         fm_ssmtp_postmaster_address: {{ fm_ssmtp_postmaster_address }}
-         fm_ssmtp_mailhub: {{ fm_ssmtp_mailhub }}
-         fm_ssmtp_rewritedomain: {{ fm_ssmtp_rewritedomain }}
-         fm_ssmtp_usetls: {{ fm_ssmtp_usetls }}
-         fm_ssmtp_usestarttls: {{ fm_ssmtp_usestarttls }}
-         fm_ssmtp_fromlineoverride: {{ fm_ssmtp_fromlineoverride }}
-         fm_ssmtp_revaliases:
-           {{ fm_ssmtp_revaliases|to_nice_yaml(indent=2)|indent(2) }}
-         fm_ssmtp_mailerconf:
-           {{ fm_ssmtp_mailerconf|to_nice_yaml(indent=2)|indent(2) }}
+      fm_ssmtp_install: {{ fm_ssmtp_install }}
+      freebsd_ssmtp_packages:
+        {{ freebsd_ssmtp_packages | to_nice_yaml(indent=2) | indent(2) }}
+      rc_conf_hostname: {{ rc_conf_hostname }}
+      fm_ssmtp_backup_conf: {{ fm_ssmtp_backup_conf }}
+      fm_ssmtp_postmaster_address: {{ fm_ssmtp_postmaster_address }}
+      fm_ssmtp_mailhub: {{ fm_ssmtp_mailhub }}
+      fm_ssmtp_rewritedomain: {{ fm_ssmtp_rewritedomain }}
+      fm_ssmtp_usetls: {{ fm_ssmtp_usetls }}
+      fm_ssmtp_usestarttls: {{ fm_ssmtp_usestarttls }}
+      fm_ssmtp_fromlineoverride: {{ fm_ssmtp_fromlineoverride }}
+      fm_ssmtp_revaliases:
+        {{ fm_ssmtp_revaliases | to_nice_yaml(indent=2) | indent(2) }}
+      fm_ssmtp_mailerconf:
+        {{ fm_ssmtp_mailerconf | to_nice_yaml(indent=2) | indent(2) }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"
 
-- name: "FreeBSD mailserver SSMTP Debug Auth"
+- name: FreeBSD mailserver SSMTP Debug Auth
   vars:
     msg: |-
-         fm_ssmtp_authuser: {{ fm_ssmtp_authuser }}
-         fm_ssmtp_authpass: {{ fm_ssmtp_authpass }}
-         fm_ssmtp_authmethod: {{ fm_ssmtp_authmethod }}
+      fm_ssmtp_authuser: {{ fm_ssmtp_authuser }}
+      fm_ssmtp_authpass: {{ fm_ssmtp_authpass }}
+      fm_ssmtp_authmethod: {{ fm_ssmtp_authmethod }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"
   when: fm_ssmtp_auth_debug|bool
 
 # EOF
-...
