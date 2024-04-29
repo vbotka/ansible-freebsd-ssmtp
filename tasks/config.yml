@@ -1,20 +1,18 @@
 ---
-
-- name: "config: Configure /usr/local/etc/ssmtp/ssmtp.conf"
+- name: "Config: Configure /usr/local/etc/ssmtp/ssmtp.conf"
   ansible.builtin.template:
     src: ssmtp.conf.j2
     dest: /usr/local/etc/ssmtp/ssmtp.conf
     owner: root
     group: ssmtp
-    mode: '0640'
+    mode: "0640"
 
-- name: "config: Configure /usr/local/etc/ssmtp/revaliases"
+- name: "Config: Configure /usr/local/etc/ssmtp/revaliases"
   ansible.builtin.template:
     src: revaliases.j2
     dest: /usr/local/etc/ssmtp/revaliases
     owner: root
     group: ssmtp
-    mode: '0640'
+    mode: "0640"
 
 # EOF
-...

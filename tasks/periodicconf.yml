@@ -1,14 +1,12 @@
 ---
-
-- name: "periodic: Configure /etc/periodic.conf.local"
+- name: "Periodic: Configure /etc/periodic.conf.local"
   ansible.builtin.lineinfile:
     create: true
-    mode: '0644'
+    mode: "0644"
     dest: /etc/periodic.conf.local
-    regexp: '^\s*{{ item.regexp }}\s*=(.*)$'
+    regexp: ^\s*{{ item.regexp }}\s*=(.*)$
     line: "{{ item.regexp }}={{ item.val }}"
     backup: "{{ fm_ssmtp_backup_conf }}"
   loop: "{{ fm_ssmtp_periodic_conf }}"
 
 # EOF
-...

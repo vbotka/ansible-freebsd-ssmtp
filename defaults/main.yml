@@ -7,16 +7,16 @@ fm_ssmtp_auth_debug: false
 fm_ssmtp_backup_conf: false
 
 # > > > CHANGE AT LEAST THIS - - - - - - - - - - - - - - - - - - - - - - - - - -
-rc_conf_hostname: srv.example.com  # Note 1.
-fm_ssmtp_postmaster_address: 'postmaster@example.com'
-fm_ssmtp_mailhub: 'hub.example.com:587'
+rc_conf_hostname: srv.example.com # Note 1.
+fm_ssmtp_postmaster_address: postmaster@example.com
+fm_ssmtp_mailhub: hub.example.com:587
 fm_ssmtp_rewritedomain: example.com
-fm_ssmtp_usetls: 'Yes'
-fm_ssmtp_usestarttls: 'Yes'
+fm_ssmtp_usetls: "Yes"
+fm_ssmtp_usestarttls: "Yes"
 fm_ssmtp_authuser: username
 fm_ssmtp_authpass: password
 fm_ssmtp_authmethod: LOGIN
-fm_ssmtp_fromlineoverride: 'yes'
+fm_ssmtp_fromlineoverride: "yes"
 fm_ssmtp_revaliases: []
 # - - - - - - - - - - - - - - - - - - - - - - - - - - CHANGE AT LEAST THIS < < <
 
@@ -31,26 +31,26 @@ freebsd_ssmtp_packages:
 
 # /etc/mail/mailer.conf
 fm_ssmtp_mailerconf:
-  - 'sendmail        /usr/local/sbin/ssmtp'
-  - 'send-mail       /usr/local/sbin/ssmtp'
-  - 'mailq           /usr/local/sbin/ssmtp'
-  - 'newaliases      /usr/local/sbin/ssmtp'
-  - 'hoststat        /usr/bin/true'
-  - 'purgestat       /usr/bin/true'
+  - sendmail        /usr/local/sbin/ssmtp
+  - send-mail       /usr/local/sbin/ssmtp
+  - mailq           /usr/local/sbin/ssmtp
+  - newaliases      /usr/local/sbin/ssmtp
+  - hoststat        /usr/bin/true
+  - purgestat       /usr/bin/true
 
 # /etc/periodic.conf.local
 fm_ssmtp_periodic_conf:
-  - {regexp: daily_clean_hoststat_enable, val: '"NO"'}
-  - {regexp: daily_status_mail_rejects_enable, val: '"NO"'}
-  - {regexp: daily_status_include_submit_mailq, val: '"NO"'}
-  - {regexp: daily_submit_queuerun, val: '"NO"'}
+  - { regexp: daily_clean_hoststat_enable, val: '"NO"' }
+  - { regexp: daily_status_mail_rejects_enable, val: '"NO"' }
+  - { regexp: daily_status_include_submit_mailq, val: '"NO"' }
+  - { regexp: daily_submit_queuerun, val: '"NO"' }
 
 # /etc/rc.conf
 fm_ssmtp_rcconf:
-  - {regexp: sendmail_enable, val: '"NONE"'}
-  - {regexp: sendmail_submit_enable, val: '"NO"'}
-  - {regexp: sendmail_outbound_enable, val: '"NO"'}
-  - {regexp: sendmail_msp_queue_enable, val: '"NO"'}
+  - { regexp: sendmail_enable, val: '"NONE"' }
+  - { regexp: sendmail_submit_enable, val: '"NO"' }
+  - { regexp: sendmail_outbound_enable, val: '"NO"' }
+  - { regexp: sendmail_msp_queue_enable, val: '"NO"' }
 
 # Note 1.
 # Variable rc_conf_hostname is used also in roles:
@@ -58,4 +58,3 @@ fm_ssmtp_rcconf:
 # - vbotka.freebsd_mailserver
 
 # EOF
-...
