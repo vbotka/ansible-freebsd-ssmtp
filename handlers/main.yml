@@ -2,6 +2,7 @@
 # handlers for freebsd_ssmtp
 
 - name: Stop sendmail
+  listen: stop sendmail
   ansible.builtin.service:
     name: sendmail
     state: stopped
