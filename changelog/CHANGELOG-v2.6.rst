@@ -18,6 +18,7 @@ Major Changes
 
 Minor Changes
 -------------
+* config no_log; add var fp_ssmtp_debug_classified (default=false)
 
 Bugfixes
 --------

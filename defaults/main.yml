@@ -3,6 +3,7 @@
 
 fm_ssmtp_install: true
 fm_ssmtp_debug: false
+fp_ssmtp_debug_classified: false
 fm_ssmtp_auth_debug: false
 fm_ssmtp_backup_conf: false
 
