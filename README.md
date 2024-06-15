@@ -1,6 +1,8 @@
 # freebsd_ssmtp
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_ssmtp)[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-ssmtp)](https://github.com/vbotka/ansible-freebsd-ssmtp/tags)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_ssmtp)
+[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp)
+[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-ssmtp)](https://github.com/vbotka/ansible-freebsd-ssmtp/tags)
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_ssmtp/) FreeBSD. Install and configure SSMTP.
 
