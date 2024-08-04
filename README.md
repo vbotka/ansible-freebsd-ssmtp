@@ -47,7 +47,7 @@ Install the collection if necessary
 shell> ansible-galaxy collection install community.general
 ```
 
-3) Fit variables
+3) Fit variables to your needs.
 
 
 4) Create playbook and inventory
@@ -74,6 +74,18 @@ ansible_perl_interpreter=/usr/local/bin/perl
 ```
 
 5) Install and configure the mailserver
+
+Install packages
+
+```bash
+shell> ansible-playbook freebsd-ssmtp.yml -t fm_ssmtp_packages -e fm_ssmtp_install=true
+```
+Dry-run the playbook
+
+```bash
+shell> ansible-playbook freebsd_ssmtp.yml -CD
+```
+Run the playbook
 
 ```bash
 shell> ansible-playbook freebsd_ssmtp.yml
