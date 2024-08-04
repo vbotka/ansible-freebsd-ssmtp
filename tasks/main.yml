@@ -6,10 +6,10 @@
   when: fm_ssmtp_debug | bool
   tags: fm_ssmtp_debug
 
-- name: Import packages.yml
-  ansible.builtin.import_tasks: packages.yml
+- name: Import pkg.yml
+  ansible.builtin.import_tasks: pkg.yml
   when: fm_ssmtp_install | bool
-  tags: fm_ssmtp_packages
+  tags: fm_ssmtp_pkg
 
 - name: Import rcconf.yml
   ansible.builtin.import_tasks: rcconf.yml

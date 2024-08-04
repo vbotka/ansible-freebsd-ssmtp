@@ -1,6 +1,8 @@
 # freebsd_ssmtp
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_ssmtp)[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-ssmtp)](https://github.com/vbotka/ansible-freebsd-ssmtp/tags)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/freebsd_ssmtp)
+[![Build Status](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp.svg?branch=master)](https://app.travis-ci.com/vbotka/ansible-freebsd-ssmtp)
+[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-freebsd-ssmtp)](https://github.com/vbotka/ansible-freebsd-ssmtp/tags)
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/freebsd_ssmtp/) FreeBSD. Install and configure SSMTP.
 
@@ -45,7 +47,7 @@ Install the collection if necessary
 shell> ansible-galaxy collection install community.general
 ```
 
-3) Fit variables
+3) Fit variables to your needs.
 
 
 4) Create playbook and inventory
@@ -72,6 +74,18 @@ ansible_perl_interpreter=/usr/local/bin/perl
 ```
 
 5) Install and configure the mailserver
+
+Install packages
+
+```bash
+shell> ansible-playbook freebsd-ssmtp.yml -t fm_ssmtp_packages -e fm_ssmtp_install=true
+```
+Dry-run the playbook
+
+```bash
+shell> ansible-playbook freebsd_ssmtp.yml -CD
+```
+Run the playbook
 
 ```bash
 shell> ansible-playbook freebsd_ssmtp.yml

@@ -6,6 +6,7 @@
     owner: root
     group: ssmtp
     mode: "0640"
+  no_log: "{{ not fm_ssmtp_auth_debug | bool }}"
 
 - name: "Config: Configure /usr/local/etc/ssmtp/revaliases"
   ansible.builtin.template:
