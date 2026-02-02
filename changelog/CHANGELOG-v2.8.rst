@@ -15,6 +15,7 @@ Ansible 2.20 update
 Major Changes
 -------------
 * Supported versions: 13.5, 14.3, 15.0
+* Put ansible facts into the dictionary ansible_facts
 
 Minor Changes
 -------------
