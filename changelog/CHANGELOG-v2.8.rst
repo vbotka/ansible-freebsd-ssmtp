@@ -5,6 +5,14 @@ vbotka.freebsd_ssmtp 2.8 Release Notes
 .. contents:: Topics
 
 
+2.8.1
+=====
+
+Release Summary
+---------------
+Update .gitignore
+
+
 2.8.0
 =====
 
